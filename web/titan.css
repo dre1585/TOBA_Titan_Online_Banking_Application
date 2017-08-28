@@ -1,0 +1,37 @@
+body {
+    font-family: 'Arial', 'helvetica', sans-serif;
+    background-image: url("1328779_125");
+}
+
+.titan_nav {
+    padding: 10px 0 10px 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: #AB0535;
+    
+}
+
+ul.titan_nav {
+    margin-top: 15px;
+}
+
+.titan_nav li {
+    display: inline;
+    padding: 0 20px 0 20px;
+    font-size:  20px;
+    border-right: 1px solid #FFFBFB;
+}
+
+.titan_nav a {
+    text-decoration: none;
+    color: #CBB387;
+    padding: 8px;
+    font-variant: small-caps;
+     
+}
+
+.titan_nav a:hover {
+    color: #ffffff
+}
+
+

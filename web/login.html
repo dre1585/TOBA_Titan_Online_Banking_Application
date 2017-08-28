@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titan Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login_page.css" type="text/css"/>
+
+    </head>
+    <body>
+        <img src="Titan Acadie-Bathurst - T-Logo version Finale2656.jpg" width="100" height="100" alt=" titan_Logo"/>
+        <nav>
+            <ul class="login_page_nav">
+                <li><a href="login.html">login</a></li>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+
+        </nav>
+        <header>
+
+            <h1>Welcome to Titan Online Banking</h1>
+        </header>
+        <section>
+            <p>Please Login Below.</p>
+        </section>
+
+        <form name="userLogin" action="LoginServlet">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Username" required><br>
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="hidden" name="action" value="register"><br>
+            <input type="submit" value="Login" />
+        </form><br>
+        
+        <FORM action="new_customer.jsp">
+            <INPUT type=submit value="Sign Up Here">
+        </FORM>
+    </body>
+</html>
