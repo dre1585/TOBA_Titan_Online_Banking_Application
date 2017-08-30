@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1></h1>
+        <p><i>${message}}</i></p>
         <form method="post" action="NewCustomerServlet">
             <center>
                 <table border="1" width="20%" cellpadding="3" bgcolor="#AB0535">
@@ -31,11 +32,11 @@
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td><input type="text" name="uname" value="" required/></td>
+                            <td><input type="text" name="address" value="" value="${user.address}" required/></td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td><input type="text" name="city" value="" required/></td>
+                            <td><input type="text" name="city" value="" value="${user.city}" required/></td>
                         </tr>
                         <tr>
                             <td>State</td>
@@ -97,11 +98,11 @@
 
                         <tr>
                             <td>Zipcode</td>
-                            <td><input type="number" name="zipcode" value="" maxlength="5" required/></td>
+                            <td><input type="number" name="zipcode" value="" value="${user.zipcode}" maxlength="5" required/></td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><input type="text" name="email" value="" required/></td>
+                            <td><input type="text" name="email" value="" value="${user.email}" required/></td>
                         </tr>
                         <tr>
                     
