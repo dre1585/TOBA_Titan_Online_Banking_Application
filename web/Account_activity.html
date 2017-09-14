@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>Account activity</title>
@@ -11,5 +12,12 @@
             <h2>Account activity coming soon</h2>
 
         </header>
+        
+    <c:if test="${}">
+        <p></p>
+    </c:if>
+     <c:if test="${}">
+        <p>Not Logged In</p>
+    </c:if>
     </body>
 </html>

@@ -28,16 +28,19 @@ public class NewCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
 
-        String url = "new_customer.jsp";
+        String url;
+        url = "/new_customer.jsp";
 
-        String action = request.getParameter(action);
+        //get current action
+        String action = request.getParameter("action");
         if (action == null) {
-            action = "join";
+            action = "login"; //default action
         }
 
-        if (action.equals("join")) {
+        //perform action and set URL 
+        if (action.equals("login")) {
             url = "/new_customer.jsp";
-        } else if (action.equals("add")) {
+        } else if (action.equals("Submit")) {
             String fname = request.getParameter("fname");
             String lname = request.getParameter("fname");
             String phone = request.getParameter("phone");
@@ -45,9 +48,10 @@ public class NewCustomerServlet extends HttpServlet {
             String city = request.getParameter("city");
             String zipcode = request.getParameter("zipcode");
             String email = request.getParameter("email");
+            
+            User user = new User()
         }
 
-        
         //validate the parameters
         String message;
         if (fname == null || lname == null || phone == null || address == null || city == null || zipcode == null || email == null
@@ -57,9 +61,9 @@ public class NewCustomerServlet extends HttpServlet {
         } else {
             message = "";
             url = "Success.html";
-           
+
         }
-    
+
     }
 
     @Override
