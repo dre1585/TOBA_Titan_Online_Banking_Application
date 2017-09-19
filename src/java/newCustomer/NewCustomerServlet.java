@@ -1,7 +1,6 @@
 package newCustomer;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +10,9 @@ public class NewCustomerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String url = "/new_customer.jsp";
-        
+
         String fname = request.getParameter("fname");
         String lname = request.getParameter("fname");
         String phone = request.getParameter("phone");
@@ -22,21 +21,24 @@ public class NewCustomerServlet extends HttpServlet {
         String zipcode = request.getParameter("zipcode");
         String email = request.getParameter("email");
 
-        User user = null;
-       
+        User user = new User(fname, lname, phone,address,
+                             city, zipcode, email);
+        request.setAttribute("user", user);
+
         //validate the parameters
+        
         String message;
         if (fname == null || lname == null || phone == null || address == null || city == null || zipcode == null || email == null
                 || fname.isEmpty() || lname.isEmpty() || phone.isEmpty() || address.isEmpty() || city.isEmpty() || zipcode.isEmpty() || email.isEmpty()) {
-            message = "Please fill all thre text boxes";
+            message = "Please fill all text boxes";
             url = "new_customer.jsp";
         } else {
             //populate the user object
             //save it in the session
-            url = "Success.html";
+            url = "Success.jsp";
         }
 
-         //tell the context to forward to the correct page based on the url
+        //tell the context to forward to the correct page based on the url
     }
 
     @Override
@@ -48,7 +50,7 @@ public class NewCustomerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         processRequest(request, response);
 
     }
