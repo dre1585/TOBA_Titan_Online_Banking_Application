@@ -1,7 +1,7 @@
-
 package newCustomer;
 
 public class User {
+
     private String fname;
     private String lname;
     private String phone;
@@ -9,7 +9,7 @@ public class User {
     private String city;
     private String zipcode;
     private String email;
-    
+
     public User() {
         fname = "";
         lname = "";
@@ -19,8 +19,8 @@ public class User {
         zipcode = "";
         email = "";
     }
-    
-    public User(String fname, String lname, String phone, 
+
+    public User(String fname, String lname, String phone,
             String address, String city, String zipcode, String email) {
         this.fname = fname;
         this.lname = lname;
@@ -30,61 +30,61 @@ public class User {
         this.zipcode = zipcode;
         this.email = email;
     }
-    
+
     public String getfname() {
         return fname;
     }
-    
+
     public void setfname(String fname) {
         this.fname = fname;
     }
-    
+
     public String getlname() {
         return lname;
     }
-    
+
     public void setlname(String lname) {
         this.lname = lname;
     }
-    
+
     public String getphone() {
         return phone;
     }
-    
+
     public void phone(String phone) {
         this.phone = phone;
     }
-    
+
     public String address() {
         return address;
     }
-    
+
     public void address(String address) {
         this.address = address;
     }
-    
+
     public String city() {
         return city;
     }
-    
+
     public void setcity(String city) {
         this.city = city;
     }
-    
+
     public String getzipcode() {
         return zipcode;
     }
-    
+
     public void setzipcode(String zipcode) {
         this.zipcode = zipcode;
     }
-    
+
     public String getemail() {
         return email;
     }
-    
+
     public void setemail(String email) {
         this.email = email;
     }
-    
+
 }

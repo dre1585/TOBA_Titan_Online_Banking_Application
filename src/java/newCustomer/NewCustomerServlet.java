@@ -12,6 +12,8 @@ public class NewCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/new_customer.jsp";
+        getServletContext().getRequestDispatcher(url)
+                .forward(request, response);
 
         String fname = request.getParameter("fname");
         String lname = request.getParameter("fname");
@@ -31,14 +33,18 @@ public class NewCustomerServlet extends HttpServlet {
         if (fname == null || lname == null || phone == null || address == null || city == null || zipcode == null || email == null
                 || fname.isEmpty() || lname.isEmpty() || phone.isEmpty() || address.isEmpty() || city.isEmpty() || zipcode.isEmpty() || email.isEmpty()) {
             message = "Please fill all text boxes";
-            url = "new_customer.jsp";
+            url = "/new_customer.jsp";
         } else {
             //populate the user object
             //save it in the session
-            url = "Success.jsp";
+            //*url = "/Success.jsp";
+            response.sendRedirect("/Success.jsp");
+            //UserDB.insert(user);
         }
-
         //tell the context to forward to the correct page based on the url
+        getServletContext()
+                .getRequestDispatcher(url)
+                .forward(request, response);
     }
 
     @Override

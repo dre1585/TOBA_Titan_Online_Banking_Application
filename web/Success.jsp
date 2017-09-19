@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/header.html" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,8 +11,9 @@
     <body>
         <h1>Thank You</h1>
         <section>
-            <p>You have successfully join Titan Bank. </p>  
+            <p>You have successfully joined Titan Bank. </p>  
         </section>
         
     </body>
 </html>
+<c:import url="/footer.jsp" />
