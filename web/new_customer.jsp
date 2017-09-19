@@ -13,7 +13,7 @@
             <p><i>${message}}</i></p>
         </c:if>
               
-    <form method="post" action="NewCustomerServlet">
+    <form method="post" action="/NewCustomerServlet">
         <center>
             <table border="1" width="20%" cellpadding="3" bgcolor="#AB0535">
                 <thead>
@@ -115,3 +115,5 @@
 
                         </body>
                         </html>
+
+<c:import url="/footer.jsp" />                        

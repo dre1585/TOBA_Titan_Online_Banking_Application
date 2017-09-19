@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/header.html" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +14,7 @@
         <img src="Titan Acadie-Bathurst - T-Logo version Finale2656.jpg" width="100" height="100" alt=" titan_Logo"/>
         <nav>
             <ul class="login_page_nav">
-                <li><a href="login.html">login</a></li>
+                <li><a href="login.jsp">login</a></li>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">contact</a></li>
             </ul>
@@ -43,3 +46,4 @@
         </FORM>
     </body>
 </html>
+<c:import url="/footer.jsp" />

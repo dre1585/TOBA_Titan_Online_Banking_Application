@@ -3,6 +3,6 @@
     GregorianCalendar currentDate = new GregorianCalendar();
     int currentYear = currentDate.get(Calendar.YEAR);
 %>
-<p>%copy; Copyright <%= currentYear %> Titan Online Banking </p>
+<p>&COPY; Copyright  <%= currentYear %> Titan Online Banking </p>
  </body>
 </html>

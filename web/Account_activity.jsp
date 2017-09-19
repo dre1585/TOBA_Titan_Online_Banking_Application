@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="/includes/header.html" />
+<%@ include file="/includes/header.html"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,12 +16,12 @@
 
         </header>
 
-    <c:if test="${}">
+    <c:if test="">
         <p></p>
     </c:if>
-    <c:if test="${}">
+    <c:if test="">
         <p>Not Logged In</p>
     </c:if>
 </body>
 </html>
-<c:import url="/includes/footer.jsp" />
+<%@ include file="/includes/footer.jsp" %>
