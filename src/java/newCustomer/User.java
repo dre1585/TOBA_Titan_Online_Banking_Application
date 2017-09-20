@@ -9,6 +9,8 @@ public class User {
     private String city;
     private String zipcode;
     private String email;
+    private String username;
+    private String password;
 
     public User() {
         fname = "";
@@ -18,10 +20,13 @@ public class User {
         city = "";
         zipcode = "";
         email = "";
+        username = "";
+        password = "";
     }
 
     public User(String fname, String lname, String phone,
-            String address, String city, String zipcode, String email) {
+            String address, String city, String zipcode, String email, String username,
+            String password) {
         this.fname = fname;
         this.lname = lname;
         this.phone = phone;
@@ -29,6 +34,8 @@ public class User {
         this.city = city;
         this.zipcode = zipcode;
         this.email = email;
+        this.username = username;
+        this.password = password;
     }
 
     public String getfname() {
@@ -87,4 +94,19 @@ public class User {
         this.email = email;
     }
 
+    public String getusername() {
+        return username;
+    }
+
+    public void setusername(String username) {
+        this.username = username;
+    }
+
+    public String password() {
+        return password;
+    }
+
+    public void setpassword(String password) {
+        this.password = password;
+    }
 }
