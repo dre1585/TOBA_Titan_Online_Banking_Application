@@ -1,7 +1,10 @@
 package newCustomer;
 
+//@Entity 
 public class User {
 
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private String fname;
     private String lname;
     private String phone;
@@ -25,8 +28,7 @@ public class User {
     }
 
     public User(String fname, String lname, String phone,
-            String address, String city, String zipcode, String email, String username,
-            String password) {
+            String address, String city, String zipcode, String email) {
         this.fname = fname;
         this.lname = lname;
         this.phone = phone;
@@ -34,79 +36,81 @@ public class User {
         this.city = city;
         this.zipcode = zipcode;
         this.email = email;
-        this.username = username;
-        this.password = password;
+        this.username = this.lname + this.zipcode;
+        this.password = "welcome1";
     }
 
-    public String getfname() {
+    public String getFname() {
         return fname;
     }
 
-    public void setfname(String fname) {
+    public void setFname(String fname) {
         this.fname = fname;
     }
 
-    public String getlname() {
+    public String getLname() {
         return lname;
     }
 
-    public void setlname(String lname) {
+    public void setLname(String lname) {
         this.lname = lname;
     }
 
-    public String getphone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void phone(String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public String address() {
+    public String getAddress() {
         return address;
     }
 
-    public void address(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String city() {
+    public String getCity() {
         return city;
     }
 
-    public void setcity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    public String getzipcode() {
+    public String getZipcode() {
         return zipcode;
     }
 
-    public void setzipcode(String zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 
-    public String getemail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setemail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public String password() {
+    public String getPassword() {
         return password;
     }
 
-    public void setpassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
+    
+    
 }

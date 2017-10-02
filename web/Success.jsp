@@ -11,9 +11,39 @@
     <body>
         <h1>Thank You</h1>
         <section>
-            <p>You have successfully joined Titan Bank. </p>  
+            <p>You have successfully joined Titan Bank. </p>
+            
+            <label>First Name:</label>
+            <span>${user.fname}</span>
+            </br>
+             <label>Last Name:</label>
+            <span>${user.lname}</span>
+            </br>
+             <label>Phone:</label>
+            <span>${user.phone}</span>
+            </br>
+             <label>address:</label>
+            <span>${user.address}</span>
+            </br>
+             <label>City:</label>
+            <span>${user.city}</span>
+            </br>
+             <label>Zipcode:</label>
+            <span>${user.zipcode}</span>
+            </br>
+             <label>Email:</label>
+            <span>${user.email}</span>
+            </br>
+             <label>username:</label>
+            <span>${user.username}</span>
+            </br>
+             <label>Password:</label>
+            <span>${user.password}</span>
+
+
+            
         </section>
-        
+
     </body>
 </html>
 <c:import url="/footer.jsp" />

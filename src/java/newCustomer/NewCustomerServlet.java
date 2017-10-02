@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
+import javax.sql.*;
 
 public class NewCustomerServlet extends HttpServlet {
 
@@ -14,16 +15,14 @@ public class NewCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "";
-       
 
         String fname = request.getParameter("fname");
-        String lname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
         String phone = request.getParameter("phone");
-        String address = request.getParameter("fname");
+        String address = request.getParameter("address");
         String city = request.getParameter("city");
         String zipcode = request.getParameter("zipcode");
         String email = request.getParameter("email");
-        String lastname = request.getParameter("lastname");
 
         String username = lname + zipcode;
         String tempPass = "welcome1";
@@ -36,21 +35,18 @@ public class NewCustomerServlet extends HttpServlet {
             url = "/new_customer.jsp";
         } else {
             User user = new User(fname, lname, phone, address,
-                    city, zipcode, email, username, tempPass);
+                    city, zipcode, email);
+            //user session scope
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+
             url = "/Success.jsp";
-            //populate the user object
-            //save it in the session
-            //*url = "/Success.jsp";
-            //response.sendRedirect("/Success.jsp");
-            //UserDB.insert(user);
-            
+            UserDB.insert(user);
         }
-        
+
         getServletContext().getRequestDispatcher(url)
                 .forward(request, response);
-      
+
     }
 
     @Override

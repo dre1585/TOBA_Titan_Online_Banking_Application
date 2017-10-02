@@ -6,37 +6,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import newCustomer.User;
 
 public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-          
-            
-            try
-            {
-                if(username !=null)
-                {
-                    if(username.equals("jsmith@toba.com") && password.equals("letmein"))
-                    {
-                        response.sendRedirect("Account_activity.html");
-                    }
-                    else
-                    {
-                        response.sendRedirect("Login_failure.html");
-                    }
-                }
-                
-            }
-            catch(Exception ex)
-            {
-                out.println("Error :"+ex.getMessage());
-            }
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            response.sendRedirect("new_customer.jsp");
         }
+
+        if (username.equals(user.getUsername())
+                && password.equals(user.getPassword())) {
+            response.sendRedirect("Account_activity.jsp");
+        } else {
+            response.sendRedirect("Login_failure.jsp");
+        }
+
     }
 
     @Override

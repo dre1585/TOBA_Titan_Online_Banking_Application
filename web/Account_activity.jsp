@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/includes/header.html"%>
+<%@ include file="/header.html"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,16 +12,16 @@
     <body>
         <header>
 
-            <h2>Account activity coming soon</h2>
+            <h2>Account activity</h2>
 
         </header>
 
-    <c:if test="">
-        <p></p>
+    <c:if test="${user != null} ">
+        <p>Welcome ${user.fname} ${user.lname} </p>
     </c:if>
-    <c:if test="">
+    <c:if test="${user == null} ">
         <p>Not Logged In</p>
     </c:if>
 </body>
 </html>
-<%@ include file="/includes/footer.jsp" %>
+<%@ include file="/footer.jsp" %>

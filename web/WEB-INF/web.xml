@@ -12,6 +12,14 @@
         <servlet-name>TransactionServlet</servlet-name>
         <servlet-class>Transaction.TransactionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewPassword</servlet-name>
+        <servlet-class>restPassword.NewPasswordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportsServlet</servlet-name>
+        <servlet-class>Reports.ReportsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -32,6 +40,24 @@
         <exception-type>java.lang.throwable</exception-type>
         <location>/Error_java.jsp</location>
     </error-page>
+    <servlet-mapping>
+        <servlet-name>NewPassword</servlet-name>
+        <url-pattern>/NewPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportsServlet</servlet-name>
+        <url-pattern>/ReportsServlet</url-pattern>
+    </servlet-mapping>
+    <!--form-based authentication -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/ADMIN/login.html</form-login-page>
+            <form-error-page>/ADMIN/login_error.html</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    
     <session-config>
         <session-timeout>
             30

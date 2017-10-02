@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/TOBA_Titan_Online_Banking_Application"/>
+try {
+String dbURL = "jdbc:mysql://localhost:3306/TBOA";
+String username = "root";
+String password = "sesame";
+Connection connection = DriverManager.getConnection(
+dbURL, username, password);
+
+} catch(SQLException e) {
+for (Throwable t : e)
+t.printStackTrace();
+}
+
+<Resource name="jdbc/TBOA" auth="Container"
+    maxActive="100" maxIdle="30" maxWait="10000"
+    username:="root" password="sesame"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost:3306/TBOA?autoReconnect=true"
+    logAbandoned="true" removeAbandoned="true"
+    removeAbandoneTimeout="60" type="javax.sql.DataSource" />
+
+<Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99"
+    dataSourceName="jdbc/TBOA" localDataSource="true"
+    userTable="UserPass" userNameCol="Username" userCredCol="Password"
+    userRoleTable="UserRole" roleNameCol="Rolename" />
+
+</Context>
